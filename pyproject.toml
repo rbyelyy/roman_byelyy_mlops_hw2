@@ -2,7 +2,7 @@
 name = "roman-byelyy-mlops-hw2"
 version = "0.1.1"
 description = "MLOPS HW2"
-authors = ["Roman Belyy <rbelyy@aligntech.com>"]
+authors = ["Roman Byelyy <rbyelyy@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 

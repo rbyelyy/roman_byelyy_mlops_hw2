@@ -1,0 +1,4 @@
+[core]
+    remote = hw2_dataset
+['remote "hw2_dataset"']
+    url = gdrive://1I_ayLjvj_XboS1YcvcdFIIwiCMTQwYar?hl
