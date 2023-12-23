@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "roman-byelyy-mlops-hw2"
+version = "0.1.1"
+description = "MLOPS HW2"
+authors = ["Roman Belyy <rbelyy@aligntech.com>"]
+readme = "README.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scikit-learn = "^1.3.2"
+pandas = "^2.1.4"
+dvc = "^3.36.1"
+hydra-core = "^1.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
