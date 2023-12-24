@@ -1,0 +1,4 @@
+defaults:
+  - preprocessing
+  - training
+  - postprocessing
