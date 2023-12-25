@@ -116,13 +116,11 @@ class TrainModel:
             git_commit_id = repo.head.object.hexsha
 
             # Set up MLflow
-            mlflow.set_tracking_uri("http://127.0.0.1:8080")
+            mlflow.set_tracking_uri("http://128.0.1.1:8080")
             mlflow.set_experiment("roman_byelyy_mlops_hw2")
 
             # Set up TensorBoard
-            writer = SummaryWriter(
-                log_dir="/Users/rbelyy/Downloads/apps/mlflow/tensor_logs"
-            )
+            writer = SummaryWriter(log_dir="./runs")
 
             with mlflow.start_run(run_name="rbyelyy_run"):
                 # Log hyperparameters and code version
