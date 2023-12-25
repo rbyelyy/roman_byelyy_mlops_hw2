@@ -17,7 +17,10 @@ black  = "^22.10.0"
 isort = "^5.13.2"
 flake8 = "^6.1.0"
 dvc-gdrive = "^3.0.0"
-
+omegaconf = "^2.3.0"
+mlflow = "^2.9.2"
+tensorboard = "^2.15.1"
+torch = "^2.1.2"
 
 [build-system]
 requires = ["poetry-core"]

@@ -167,3 +167,6 @@ outputs/
 
 # model files
 *.pkl
+
+# tensorbaords
+runs/
