@@ -2,13 +2,13 @@
 Train Model
 """
 import os
-import pickle
 
 import git
 import hydra
 import matplotlib.pyplot as plt
 import mlflow
 import pandas as pd
+from joblib import dump
 from omegaconf import DictConfig
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.impute import SimpleImputer
@@ -116,7 +116,7 @@ class TrainModel:
             git_commit_id = repo.head.object.hexsha
 
             # Set up MLflow
-            mlflow.set_tracking_uri("http://128.0.1.1:8080")
+            mlflow.set_tracking_uri("http://127.0.0.1:8080")
             mlflow.set_experiment("roman_byelyy_mlops_hw2")
 
             # Set up TensorBoard
@@ -207,7 +207,7 @@ class TrainModel:
         """
         Save the trained model to a file.
 
-        The model is saved using pickle, which serializes the
+        The model is saved using joblib, which serializes the
         model object for future use. The filename is defined in
         the Hydra configuration.
 
@@ -217,10 +217,29 @@ class TrainModel:
         """
         # Save the model to a file
         with open(self.cfg.output.model_file, "wb") as f:
-            pickle.dump(self.model, f)
+            dump(self.model, f)
 
         # Save the model in MLflow
         mlflow.sklearn.log_model(self.model, "model")
+
+    # def save_model(self):
+    #     """
+    #     Save the trained model to a file.
+    #
+    #     The model is saved using pickle, which serializes the
+    #     model object for future use. The filename is defined in
+    #     the Hydra configuration.
+    #
+    #     Raises:
+    #         FileNotFoundError: If the directory specified in the
+    #         Hydra config does not exist.
+    #     """
+    #     # Save the model to a file
+    #     with open(self.cfg.output.model_file, "wb") as f:
+    #         pickle.dump(self.model, f)
+    #
+    #     # Save the model in MLflow
+    #     mlflow.sklearn.log_model(self.model, "model")
 
 
 @hydra.main(config_path="../configs", config_name="config", version_base="1.2")
