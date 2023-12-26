@@ -167,6 +167,7 @@ outputs/
 
 # model files
 *.pkl
+*.joblib
 
 # tensorbaords
 runs/
