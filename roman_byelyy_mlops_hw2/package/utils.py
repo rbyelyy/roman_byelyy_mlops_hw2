@@ -34,6 +34,15 @@ class OSUtils:
         return df
 
     def build_file_path(self, file_name):
+        """
+        Constructs a file path by joining the current directory path and the provided file name.
+
+        Args:
+            file_name (str): The name of the file.
+
+        Returns:
+            str: The full path of the file.
+        """
         # Get the current directory
         current_dir = os.path.dirname(os.path.abspath(__file__))
         # Construct the file path
