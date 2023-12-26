@@ -59,7 +59,7 @@ class TrainModel:
         os_instance = ut.OSUtils()
 
         # Construct the file path
-        file_path = ut.OSUtils.build_file_path(os_instance.train_file)
+        file_path = os_instance.build_file_path(os_instance.train_file)
 
         # Set up a DVC remote and pull the data
         remote_name = dvc_instance.remote_name
